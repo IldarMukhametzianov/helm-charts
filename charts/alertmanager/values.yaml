@@ -106,16 +106,16 @@ persistence:
 
 config:
   global: {}
-    # slack_api_url: ''
+    slack_api_url: 'https://hooks.slack.com/services/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'
 
   templates:
     - '/etc/alertmanager/*.tmpl'
 
   receivers:
-    - name: default-receiver
-      # slack_configs:
-      #  - channel: '@you'
-      #    send_resolved: true
+    - name: 'slack-notifications'
+      slack_configs:
+      - channel: '#random'
+        send_resolved: true
 
   route:
     group_wait: 10s
